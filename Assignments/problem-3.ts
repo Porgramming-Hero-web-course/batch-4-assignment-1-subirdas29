@@ -9,17 +9,20 @@
         let count = 0;
 
         str.forEach(ele=>{
-           if(ele === word){
+           if(ele.toLowerCase() === word){
             count++;
            }
         })
         return count
     }
 
-    const sentence :string = "I love typescript"
-    const word: string = "typescript"
+    const sentence:string = "I love typescript"
+    const word:string = "typescript"
 
     const countNum = countWordOccurrences(sentence,word)
     console.log(countNum)
+
+
+
 
 }
