@@ -3,37 +3,46 @@
     //problem-4
 
     type CircleArea = {
-        shape: string, 
+        shape: "circle" 
         radius: number
     }
 
     type RectangleArea = {
-        shape: string,
+        shape: "rectangle"
         width: number,
         height: number,
     }
 
-    
+    type Shape = CircleArea | RectangleArea
 
 
-    const calculateShapeArea = (obj: CircleArea | RectangleArea)=>{
+    const calculateShapeArea = (obj: Shape)=>{
 
-        // if(typeof obj.shape === 'string')
-
-        if(typeof obj.shape ==='string'){
-            return 
+        if(obj.shape === "circle"){
+            return parseFloat((Math.PI * obj.radius * obj.radius).toFixed(2))
         }
-        console.log(typeof obj.shape)
+
+        else if(obj.shape === "rectangle"){
+            return obj.height * obj.width
+        }
+        else{
+            return `invalid Shape`
+        }
+
+
     }
 
-    calculateShapeArea({
-        shape: "rectangle",
-        width: 4,
-        height: 6,
-      });
+   console.log( calculateShapeArea({
+    shape: "rectangle",
+    width: 4,
+    height: 6,
+  }))
 
-      calculateShapeArea({ shape: "circle", radius: 5 });
-
-    //   console.log(rectangleArea)
+     console.log( calculateShapeArea({ 
+        shape: "circle", 
+        radius: 5
+     })
+)
+   
 
 }
