@@ -64,11 +64,14 @@
     When developing with frameworks like React, intersection types are often used to combine component props.
     ```
 
-3.Mixins and Complex Type Composition: Intersection types are useful when you’re combining functionality or properties from different objects, especially with mixins or utility types. 
+3.Mixins and Complex Type Composition: Intersection types are useful when you’re combining functionality or properties from different objects, especially with mixins or utility types.
 
     Example:
+    ```
     type Timestamped = { createdAt: Date };
     type Identifiable = { id: string };
+
     type Record = Timestamped & Identifiable;
     const myRecord: Record = { id: "123", createdAt: new Date() };
-    
+
+    ```
